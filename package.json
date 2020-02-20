@@ -4,7 +4,9 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify script.js > bundle.js && live-server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   "homepage": "https://github.com/roshanghimire93/background-generator#readme",
   "dependencies": {
     "browserify": "^16.5.0",
+    "gh-pages": "^2.2.0",
     "lodash": "^4.17.15"
   }
 }
